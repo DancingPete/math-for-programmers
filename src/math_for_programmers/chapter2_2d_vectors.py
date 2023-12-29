@@ -60,7 +60,7 @@ class Vector:
     def __repr__(self):
         """Return official str representation of object."""
 
-        return f"Vector(dimensions({self.dimensions[0]}, {self.dimensions[1]})"
+        return f"Vector(dimensions=({self.dimensions[0]}, {self.dimensions[1]})"
 
     def draw_arrow(self, ax: plt.Axes, color: str) -> None:
         """Draw the Vector as an arrow on the given Axes."""

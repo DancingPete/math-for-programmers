@@ -164,20 +164,87 @@ def ex2_11(ax: plt.Axes) -> None:
             transformed_dino.draw(ax, color="green")
 
 
+def ex2_12() -> str:
+    """Exercise 2.12
+
+    Whis is long, the x or y component of (3,-2) + (1,1) + (-2,-2)?
+    """
+
+    u = Vector(dimensions=(3,-2))
+    v = Vector(dimensions=(1,1))
+    w = Vector(dimensions=(-2,-2))
+    uvw = u + v + w
+    length_x = Vector(dimensions=(uvw.dimensions[0], 0)).length()
+    length_y = Vector(dimensions=(0, uvw.dimensions[1])).length()
+
+    return (
+        "\nExercise 3.12\n"
+        f"\tuvw = {uvw}\n"
+        f"\tlength of uvw.x = {length_x}\n"
+        f"\tlength of uvw.y = {length_y}\n"
+    )
+
+
+def ex2_13() -> str:
+    """Exercise 2.13
+
+    What are the components and lengths of the vectors (-6, 6) and
+    (5, -12)?
+    """
+
+    u = Vector(dimensions=(-6, 6))
+    v = Vector(dimensions=(5, -12))
+
+    return (
+        "\nExercise 2.13\n"
+        f"\tu: {u}\n"
+        f"\tv: {v}\n"
+        f"\tx component of u: {u.dimensions[0]}\n"
+        f"\ty component of u: {u.dimensions[1]}\n"
+        f"\tlength of u: {u.length()}\n"
+        f"\tx component of v: {v.dimensions[0]}\n"
+        f"\ty component of u: {v.dimensions[1]}\n"
+        f"\tlength of v: {v.length()}\n"
+    )
+
+
+def ex2_14() -> str:
+    """Exercise 2.14
+
+    Suppose I have a vector v with length 6 and an x component of (1,0).
+    What are the posible coordinates of v?
+    """
+
+    return (
+        "As c^2 = a^2 + b^2, c = 6, and a^2 = 1, b = +/- sqrt(35)."
+        "Therefore the vector v may be Vector(1, +/- sqrt(35)."
+    )
+
+
 def main():
     """Run each execise."""
 
-    print(ex2_6())
-    print(ex2_7())
-    print(ex2_8())
+    #print(ex2_6())
+    #print(ex2_7())
+    #print(ex2_8())
 
-    fig, axs = plt.subplot_mosaic([["left", "right"]])
-    answer = ex2_9(axs)
-    print(answer)
-    plt.show()
+    #fig2_9, axs2_9 = plt.subplot_mosaic([["left", "right"]])
+    #fig2_9.suptitle("Exercise 2.9")
+    #answer = ex2_9(axs2_9)
+    #print(answer)
 
-    fig, ax = plt.subplots()
-    answer = ex2_11(ax)
+    #fig2_11, ax2_11 = plt.subplots()
+    #fig2_11.suptitle("Exercise 2.11")
+    #answer = ex2_11(ax2_11)
+    #print(answer)
+
+    #print(ex2_12())
+    print(ex2_13())
+    print(ex2_14())
+
+
+
+    # Show all plots for exercises
     plt.show()
 
 if __name__ == "__main__": main()
